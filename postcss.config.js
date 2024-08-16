@@ -1,11 +1,11 @@
 const purgecss = [
-  "@fullhuman/postcss-purgecss",
+  '@fullhuman/postcss-purgecss',
   {
     content: [
-      "./pages/*.js",
-      "./pages/**/*.js",
-      "./components/*.js",
-      "./components/**/*.js",
+      './pages/*.js',
+      './pages/**/*.js',
+      './components/*.js',
+      './components/**/*.js',
     ],
     whitelistPatterns: [/^slick-/],
     defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
@@ -13,9 +13,9 @@ const purgecss = [
 ];
 module.exports = {
   plugins: [
-    "postcss-import",
-    "tailwindcss",
-    "autoprefixer",
-    ...(process.env.NODE_ENV === "production" ? [purgecss] : []),
+    'postcss-import',
+    'tailwindcss',
+    'autoprefixer',
+    ...(process.env.NODE_ENV === 'production' ? [] : []),
   ],
 };
