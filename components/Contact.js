@@ -60,7 +60,7 @@ const Contact = () => {
               {/* <strong className='font-medium'>Address</strong> */}
               aroal.badri@gass.id
               <br />
-              info@gmail.com
+              info@gass.id
             </div>
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
               <CiClock1 className='mb-4 text-3xl md:text-5xl text-orange-500 font-light' />

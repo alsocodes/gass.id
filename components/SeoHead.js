@@ -6,7 +6,7 @@ const defaultMeta = {
   title: 'Gass.id',
   siteName: 'Gass.id | PT. Global Andalan Solusi Sukses',
   description:
-    'Gass.id | PT. Global Andalan Solusi Sukses, Inovation Systems & Safety Solutions',
+    'Gass.id | PT. Global Andalan Solusi Sukses, Innovation Systems & Safety Solutions',
   // change base url of your web (without '/' at the end)
   url: 'https://next-landing-vpn.vercel.app',
   type: 'website',

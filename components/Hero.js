@@ -35,7 +35,7 @@ const Hero = ({
       console.log(act);
       setActive(act);
       play(act);
-    }, 5000);
+    }, 7000);
 
     return () => clearTimeout(sto);
   };
@@ -49,7 +49,7 @@ const Hero = ({
       {heros?.map((bg, key) => (
         <div
           key={key}
-          className={`w-full h-full ${bg} bg-no-repeat bg-cover bg-center absolute left-0 top-0 transition-all ease-in-out duration-1000
+          className={`w-full h-full ${bg} bg-no-repeat bg-cover bg-center absolute left-0 top-0 transition-all ease-in-out delay-700 duration-1000
             ${active === key ? 'opacity-100' : 'opacity-0'}
           `}
         />
