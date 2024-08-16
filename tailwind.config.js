@@ -27,6 +27,7 @@ module.exports = {
       orange: {
         100: '#FFECEC',
         500: '#F53855',
+        base: '#FF0100',
       },
       green: {
         500: '#2FAB73',
@@ -38,7 +39,9 @@ module.exports = {
       gray: {
         100: '#EEEFF2',
         400: '#AFB5C0',
+        450: '#EEEEEE',
         500: '#DDDDDD',
+        600: '#8B9098',
       },
     },
     extend: {
@@ -47,6 +50,7 @@ module.exports = {
         hero2: "url('../public/assets/slide-4.png')",
         hero3: "url('../public/assets/slide-2.png')",
         hero4: "url('../public/assets/slide-1.png')",
+        logo: "url('../public/assets/logo-sm.png')",
       },
     },
   },

@@ -1,17 +1,20 @@
-import Feature from '../components/Feature';
-import Pricing from '../components/Pricing';
+import About from '../components/About';
+import Product from '../components/Product';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout/Layout';
 import SeoHead from '../components/SeoHead';
+import Contact from '../components/Contact';
+import ProductGroup from '../components/ProductGroup';
 
 export default function Home() {
   return (
     <>
-      <SeoHead title="GASS.ID | PT. Global Andalan Solusi Sukses" />
+      <SeoHead title='GASS.ID | PT. Global Andalan Solusi Sukses' />
       <Layout>
         <Hero />
-        <Feature />
-        <Pricing />
+        <About />
+        <ProductGroup />
+        <Contact />
       </Layout>
     </>
   );

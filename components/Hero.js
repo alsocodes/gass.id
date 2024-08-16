@@ -45,7 +45,7 @@ const Hero = ({
   }, []);
 
   return (
-    <div className={`w-full h-screen relative bg-[#000]`} id="hero">
+    <div className={`w-full h-screen relative bg-[#000]`} id='hero'>
       {heros?.map((bg, key) => (
         <div
           key={key}
@@ -55,27 +55,27 @@ const Hero = ({
         />
       ))}
 
-      <div className="w-full h-full absolute left-0 right-0 top-0 bottom-0 bg-[#000] bg-opacity-70 z-20 ">
-        <div className="max-w-screen-xl px-8 xl:px-16 mx-auto h-full flex items-center justify-center ">
+      <div className='w-full h-full absolute left-0 right-0 top-0 bottom-0 bg-[#000] bg-opacity-60 z-20 '>
+        <div className='max-w-screen-xl px-8 xl:px-16 mx-auto h-full flex items-center justify-center '>
           <ScrollAnimationWrapper>
             <motion.div
-              className="grid grid-flow-row sm:grid-flow-col grid-rows-1 md:grid-rows-1 sm:grid-cols-1 gap-8 py-6 sm:py-16 h-full"
+              className='grid grid-flow-row sm:grid-flow-col grid-rows-1 md:grid-rows-1 sm:grid-cols-1 gap-8 py-6 sm:py-16 h-full'
               variants={scrollAnimation}
             >
-              <div className="flex flex-col justify-center items-center h-full row-start-2 sm:row-start-1 gap-4">
-                <div className="w-[200px] h-[100px] relative mb-6">
+              <div className='flex flex-col justify-center items-center h-full row-start-2 sm:row-start-1 gap-4'>
+                <div className='w-[200px] h-[100px] relative mb-6'>
                   <Image
                     src={`/assets/logo-gass-wh-sm.png`}
-                    layout="fill"
+                    layout='fill'
                     quality={100}
-                    alt="logo-gass"
+                    alt='logo-gass'
                   />
                 </div>
-                <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-white-500 leading-normal text-center">
+                <h1 className='text-3xl lg:text-4xl xl:text-5xl font-medium text-white-500 leading-normal text-center'>
                   PT Global Andalan Solusi Sukses
                 </h1>
-                <p className="text-white-300 mt-4 mb-6">
-                  Inovation Systems & Safety Solutions
+                <p className='text-white-300 mt-4 mb-6'>
+                  Innovation Systems & Safety Solutions
                 </p>
                 {/* <ButtonPrimary>Get Started</ButtonPrimary> */}
               </div>
