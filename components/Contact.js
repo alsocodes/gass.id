@@ -1,14 +1,51 @@
-import React, { useMemo } from 'react';
-import { CiClock1, CiMail, CiMap, CiPhone } from 'react-icons/ci';
+import React, { useEffect, useMemo, useState } from 'react';
+import { CiClock1, CiMail, CiMap, CiPaperplane, CiPhone } from 'react-icons/ci';
 import ButtonPrimary from './misc/ButtonPrimary';
 import Image from 'next/image';
 import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 import { motion } from 'framer-motion';
 import getScrollAnimation from '../utils/getScrollAnimation';
+import { useForm } from 'react-hook-form';
+import { BiPaperPlane, BiSend } from 'react-icons/bi';
 
 const Contact = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+  const {
+    formState: { errors },
+    handleSubmit,
+    register,
+    reset,
+  } = useForm();
 
+  const [progress, setProgress] = useState(false);
+  const [mailResult, setMailResult] = useState(null);
+  const onSubmit = async (data) => {
+    setProgress(true);
+    await fetch('/api/mail', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then(() => {
+        setProgress(false);
+        setMailResult({
+          success: true,
+          message: 'Thanks, we will response your message asap!',
+          ts: new Date(),
+        });
+      })
+      .catch(() => {
+        setProgress(false);
+        setMailResult({
+          success: false,
+          message: 'Email was not delivered, please try again!',
+          ts: new Date(),
+        });
+      });
+  };
+
+  useEffect(() => {
+    if (mailResult) reset();
+  }, [mailResult]);
   return (
     <div
       className='w-full bg-gradient-to-b from-transparent to-gray-450'
@@ -72,27 +109,102 @@ const Contact = () => {
           </div>
 
           <div className='bg-white-500 p-8'>
-            <div className='flex flex-col gap-8'>
-              <input
-                placeholder='Name'
-                className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
-              />
-              <input
-                placeholder='Email'
-                className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
-              />
-              <input
-                placeholder='Subject'
-                className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
-              />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <div className='flex flex-col gap-4'>
+                <div>
+                  <input
+                    {...register('name', { required: 'Name is required' })}
+                    placeholder='Name'
+                    className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
+                  />
+                  <div className='text-orange-base text-sm font-thin italic h-4'>
+                    {errors?.['name']?.message}
+                  </div>
+                </div>
+                <div className='flex flex-col lg:flex-row gap-3'>
+                  <div className='w-full'>
+                    <input
+                      {...register('email', {
+                        required: 'Email is required',
+                        pattern: {
+                          value: /\S+@\S+\.\S+/,
+                          message: 'Email format is not valid',
+                        },
+                      })}
+                      type='email'
+                      placeholder='Email'
+                      className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
+                    />
+                    <div className='text-orange-base text-sm font-thin italic h-4'>
+                      {errors?.['email']?.message}
+                    </div>
+                  </div>
 
-              <textarea
-                rows={3}
-                placeholder='Message'
-                className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
-              />
-              <ButtonPrimary>Submit</ButtonPrimary>
-            </div>
+                  <div className='w-full'>
+                    <input
+                      {...register('phone', {
+                        required: 'Phone/Whatsapp is required',
+                      })}
+                      placeholder='Phone/Whatsapp'
+                      type='text'
+                      className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
+                    />
+                    <div className='text-orange-base text-sm font-thin italic h-4'>
+                      {errors?.['phone']?.message}
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <input
+                    {...register('subject', {
+                      required: 'Subject is required',
+                    })}
+                    placeholder='Subject'
+                    type='text'
+                    className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
+                  />
+                  <div className='text-orange-base text-sm font-thin italic h-4'>
+                    {errors?.['subject']?.message}
+                  </div>
+                </div>
+                <div>
+                  <textarea
+                    {...register('message', {
+                      required: 'Message is required',
+                    })}
+                    rows={3}
+                    placeholder='Message'
+                    className='w-full py-2.5 px-4 border border-gray-400 outline-none focus:border-gray-600 rounded text-black-500 focus:shadow'
+                  />
+                  <div className='text-orange-base text-sm font-thin italic h-4'>
+                    {errors?.['message']?.message}
+                  </div>
+                </div>
+
+                <ButtonPrimary
+                  disabled={progress}
+                  addClass='flex justify-center items-center gap-2 font-thin'
+                >
+                  {progress ? (
+                    <div className='loaderx w-6 h-6' />
+                  ) : (
+                    <CiPaperplane className='text-2xl -rotate-45' />
+                  )}
+                  <div>Submit</div>
+                </ButtonPrimary>
+              </div>
+              {mailResult ? (
+                <p
+                  className={`py-2 text-center ${
+                    mailResult.success ? 'text-green-500' : 'text-orange-base'
+                  }  font-light text-lg`}
+                >
+                  {mailResult.message}
+                </p>
+              ) : (
+                ''
+              )}
+            </form>
           </div>
         </div>
       </div>

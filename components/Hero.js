@@ -32,7 +32,6 @@ const Hero = ({
   const play = (k) => {
     const sto = setTimeout(() => {
       const act = k < heros.length - 1 ? k + 1 : 0;
-      console.log(act);
       setActive(act);
       play(act);
     }, 7000);
