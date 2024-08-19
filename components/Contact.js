@@ -6,7 +6,10 @@ import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 import { motion } from 'framer-motion';
 import getScrollAnimation from '../utils/getScrollAnimation';
 import { useForm } from 'react-hook-form';
-import { BiPaperPlane, BiSend } from 'react-icons/bi';
+import { BiLogoWhatsapp, BiPaperPlane, BiSend } from 'react-icons/bi';
+import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { PiWhatsappLogoLight, PiWhatsappLogoThin } from 'react-icons/pi';
+import Link from 'next/link';
 
 const Contact = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -86,18 +89,30 @@ const Contact = () => {
             </div>
 
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
-              <CiPhone className='mb-4 text-3xl md:text-5xl text-orange-500' />
-              {/* <strong className='font-medium'>Address</strong> */}
-              Aroal Badri
-              <br />
-              0812 8991 9090
+              <Link
+                href={
+                  'https://wa.me/6281289919090?text=Halo gass, saya ingin bertanya terkait kebutuhan .....'
+                }
+              >
+                <a rel='noopener noreferrer' target='_blank'>
+                  <PiWhatsappLogoLight className='mb-4 text-3xl md:text-5xl text-orange-500' />
+                  {/* <strong className='font-medium'>Address</strong> */}
+                  {/* Aroal Badri */}
+                  {/* <br /> */}
+                  0812 8991 9090
+                </a>
+              </Link>
             </div>
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
-              <CiMail className='mb-4 text-3xl md:text-5xl text-orange-500' />
-              {/* <strong className='font-medium'>Address</strong> */}
-              aroal.badri@gass.id
-              <br />
-              info@gass.id
+              <Link href={'mailto:info@gass.id'}>
+                <a rel='noopener noreferrer' target='_blank'>
+                  <CiMail className='mb-4 text-3xl md:text-5xl text-orange-500' />
+                  {/* <strong className='font-medium'>Address</strong> */}
+                  {/* aroal.badri@gass.id
+              <br /> */}
+                  info@gass.id
+                </a>
+              </Link>
             </div>
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
               <CiClock1 className='mb-4 text-3xl md:text-5xl text-orange-500 font-light' />
