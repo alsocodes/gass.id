@@ -31,11 +31,11 @@ const ProductGroup = () => {
     },
     {
       name: 'Safety Cone with Bracket',
-      images: ['safety-cone-1.png', 'safety-cone-2.png', 'safety-cone-3.png'],
+      images: ['safety-cone-1.png', 'safety-cone-3.png'],
     },
     {
       name: 'APAR with Bracket',
-      images: ['apar-1.png', 'apar-2.png', 'apar-3.png'],
+      images: ['apar-1.png', 'apar-2.png'],
     },
     {
       name: 'Rotary Lamp',
@@ -67,6 +67,8 @@ const ProductGroup = () => {
       images: ['p3k-1.png'],
     },
   ];
+  //'apar-3.png'
+  // 'safety-cone-2.png',
 
   const shimmer = (w = '100%', h = '100%') => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

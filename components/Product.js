@@ -15,7 +15,7 @@ const products = [
   },
   {
     name: 'Safety Cone with Bracket',
-    images: ['safety-cone-1.png', 'safety-cone-2.png', 'safety-cone-3.png'],
+    images: ['safety-cone-1.png', 'safety-cone-3.png'],
   },
   {
     name: 'Rotary Lamp',
@@ -27,14 +27,15 @@ const products = [
   },
   {
     name: 'APAR with Bracket',
-    images: ['apar-bracket-1.png', 'apar-bracket-2.png', 'apar-bracket-3.png'],
+    images: ['apar-bracket-1.png', 'apar-bracket-2.png'],
   },
   {
     name: 'Backup Alarm',
     images: ['backup-alarm-1.png', 'backup-alarm-1.png', 'backup-alarm-1.png'],
   },
 ];
-
+// 'apar-bracket-3.png'
+// 'safety-cone-2.png',
 const product = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
