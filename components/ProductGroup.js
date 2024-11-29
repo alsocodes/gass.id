@@ -31,7 +31,7 @@ const ProductGroup = () => {
     },
     {
       name: 'Safety Cone with Bracket',
-      images: ['safety-cone-1.png', 'safety-cone-3.png'],
+      images: ['safety-cone-1.png', 'safety-cone-2.png', 'safety-cone-3.png'],
     },
     {
       name: 'APAR with Bracket',
@@ -39,7 +39,12 @@ const ProductGroup = () => {
     },
     {
       name: 'Rotary Lamp',
-      images: ['rotary-lamp-1.png', 'rotary-lamp-2.png', 'rotary-lamp-3.png'],
+      images: [
+        'rotary-lamp-1.1.png',
+        'rotary-lamp-1.png',
+        'rotary-lamp-2.png',
+        'rotary-lamp-3.png',
+      ],
     },
 
     {
