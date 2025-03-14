@@ -6,7 +6,8 @@ import ScrollAnimationWrapper from './Layout/ScrollAnimationWrapper';
 
 const missions = [
   'Kesejahteraan karyawan adalah prioritas',
-  'Menjunjung tinggi program Keselamatan dan Kesehatan Kerja3. Memastikan kepuasan pelanggan',
+  'Menjunjung tinggi program Keselamatan dan Kesehatan Kerja',
+  'Memastikan kepuasan pelanggan',
   'Memberikan pelayanan yang prima dan bekerja optimal',
   'Berkontribusi pada realisasi ide dan inovasi pelanggan denganmenyediakan produk teknologi keamanan dan kenyamanan',
 ];

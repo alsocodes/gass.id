@@ -91,7 +91,7 @@ const Contact = () => {
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
               <Link
                 href={
-                  'https://wa.me/6281289919090?text=Halo gass, saya ingin bertanya terkait kebutuhan .....'
+                  'https://wa.me/6285732010105?text=Halo gass, saya ingin bertanya terkait kebutuhan .....'
                 }
               >
                 <a rel='noopener noreferrer' target='_blank'>
@@ -99,7 +99,7 @@ const Contact = () => {
                   {/* <strong className='font-medium'>Address</strong> */}
                   {/* Aroal Badri */}
                   {/* <br /> */}
-                  0812 8991 9090
+                  0857 3201 0105
                 </a>
               </Link>
             </div>
