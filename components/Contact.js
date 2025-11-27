@@ -89,16 +89,21 @@ const Contact = () => {
             </div>
 
             <div className='bg-white-500 p-3 w-full lg:p-4 text-black-500'>
+              <PiWhatsappLogoLight className='mb-4 text-3xl md:text-5xl text-orange-500' />
+              <a
+                href='tel:+622138853107'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                (021) 388 531 07
+              </a>
+              <br />
               <Link
                 href={
                   'https://wa.me/6285732010105?text=Halo gass, saya ingin bertanya terkait kebutuhan .....'
                 }
               >
                 <a rel='noopener noreferrer' target='_blank'>
-                  <PiWhatsappLogoLight className='mb-4 text-3xl md:text-5xl text-orange-500' />
-                  {/* <strong className='font-medium'>Address</strong> */}
-                  {/* Aroal Badri */}
-                  {/* <br /> */}
                   0857 3201 0105
                 </a>
               </Link>

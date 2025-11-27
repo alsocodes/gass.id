@@ -50,6 +50,7 @@ const SeoHead = (props) => {
   return (
     <Head>
       <title>{meta.title}</title>
+      <link rel='icon' href='/favicon.ico' type='image/x-icon' sizes='32x32' />
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
       <meta property='og:url' content={`${meta.url}${router.asPath}`} />
@@ -77,13 +78,9 @@ const SeoHead = (props) => {
           <meta name='author' property='article:author' content={meta.author} />
         </>
       )}
-      {/* Favicons */}
-      {/* {favicons.map((linkProps) => (
-        <link key={linkProps.href} {...linkProps} />
-      ))} */}
-      {/* Windows 8 app icon */}
+
       <meta name='msapplication-TileColor' content='#F53838' />
-      <meta name='msapplication-TileImage' content='/assets/logo-favicon.png' />
+      {/* <meta name='msapplication-TileImage' content='/favicon.ico' /> */}
       {/* Accent color on supported browser */}
       <meta name='theme-color' content='#F53838' />
     </Head>
